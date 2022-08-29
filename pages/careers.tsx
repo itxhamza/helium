@@ -1,49 +1,30 @@
 import React from "react";
+import dynamic from "next/dynamic";
 import styles from "../styles/careers.module.css";
 import { FaChevronRight } from "react-icons/fa";
-import Head from "next/head";
-// import "bootstrap/dist/css/bootstrap.css";
+import "owl.carousel/dist/assets/owl.carousel.css";
+import "owl.carousel/dist/assets/owl.theme.default.css";
+// const $ = dynamic(import("jquery"), { ssr: false });
+const OwlCarousel = dynamic(import("react-owl-carousel"), { ssr: false });
 
 const Careers = () => {
   React.useEffect(() => {
-    //@ts-ignore
-    var owl = $(".owl-carousel");
-    owl.owlCarousel({
-      loop: true,
-      margin: 10,
-      items: 1,
-    });
-    owl.on("changed.owl.carousel", function (event: any) {
-      // @ts-ignore
-      $("video").prop("muted", !$("video").prop("muted"));
-      // @ts-ignore
-      $("video").prop("autoPaly", true);
-    });
+    jQuery("video").prop("muted", true);
+    // @ts-ignore
+    jQuery("video").prop("autoPaly", true);
   }, []);
+  const onChangeCarousel = () => {
+    // @ts-ignore
+
+    jQuery("video").prop("muted", true);
+    // @ts-ignore
+    jQuery("video").prop("autoPaly", true);
+  };
+
   return (
     <article
       style={{ background: "black", minHeight: "100vh", paddingTop: "10vh" }}
     >
-      <Head>
-        <script
-          src="https://code.jquery.com/jquery-3.3.1.min.js"
-          integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-          crossOrigin="anonymous"
-        ></script>
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
-          integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A=="
-          crossOrigin="anonymous"
-          referrerPolicy="no-referrer"
-        />
-        <script
-          src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
-          integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
-          crossOrigin="anonymous"
-          referrerPolicy="no-referrer"
-        ></script>
-      </Head>
       <div
         className="d-flex align-items-center justify-content-center flex-column"
         style={{ height: 560 }}
@@ -275,33 +256,43 @@ const Careers = () => {
         <br />
         <br />
         <div style={{ borderRadius: 20 }}>
-          <div className="owl-carousel">
-            {[0, 1, 2, 3, 4].map((item) => {
-              return (
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                >
-                  <video
-                    className="video-fluid"
-                    id="video6"
-                    autoPlay
-                    muted
-                    width="100%"
-                    controls
+          {OwlCarousel && (
+            <OwlCarousel
+              className="owl-theme"
+              loop
+              margin={10}
+              nav
+              items={1}
+              onChange={onChangeCarousel}
+            >
+              {[0, 1, 2, 3, 4].map((item) => {
+                return (
+                  <div
+                    className="item"
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
                   >
-                    <source
-                      src="https://careers.cred.club/Videos/6.mp4"
-                      type="video/mp4"
-                    />
-                  </video>
-                </div>
-              );
-            })}
-          </div>
+                    <video
+                      className="video-fluid"
+                      id="video6"
+                      autoPlay
+                      muted
+                      width="100%"
+                      controls
+                    >
+                      <source
+                        src="https://careers.cred.club/Videos/6.mp4"
+                        type="video/mp4"
+                      />
+                    </video>
+                  </div>
+                );
+              })}
+            </OwlCarousel>
+          )}
         </div>
       </div>
 
