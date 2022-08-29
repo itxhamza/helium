@@ -15,21 +15,26 @@ const Careers = () => {
   }, []);
   const onChangeCarousel = () => {
     // @ts-ignore
-
     jQuery("video").prop("muted", true);
     // @ts-ignore
     jQuery("video").prop("autoPaly", true);
   };
 
   return (
-    <article
-      style={{ background: "black", minHeight: "100vh", paddingTop: "10vh" }}
-    >
+    <article style={{ background: "", minHeight: "100vh", paddingTop: "10vh" }}>
       <div
         className="d-flex align-items-center justify-content-center flex-column"
         style={{ height: 560 }}
       >
-        <h1 className="text-white m-0" style={{ fontSize: 48 }}>
+        <h1
+          className=" m-0"
+          style={{
+            fontSize: 48,
+            color: "#11141c",
+            fontWeight: "bold",
+            opacity: 0.8,
+          }}
+        >
           {" "}
           opportunities are infinite.
         </h1>
@@ -124,13 +129,13 @@ const Careers = () => {
       {/* New Section sTArted */}
       <div className="d-flex align-items-center justify-content-center">
         <div
-          className={`${styles.knowCRED} d-flex align-items-start justify-content-between flex-row text-white`}
+          className={`${styles.knowCRED} d-flex align-items-start justify-content-between flex-row `}
         >
           <div style={{ width: "50%" }}>
             <h1>want to know what it's like to work at CRED?</h1>
           </div>
           <div style={{ width: "50%" }}>
-            <p style={{ fontSize: 20 }} className="text-white">
+            <p style={{ fontSize: 20 }} className="">
               hard truths: pushing oneself comes with the role. and we realise
               pushing oneself is hard work. which is why CRED is in the
               continuous process of building an environment that helps the team
@@ -145,7 +150,7 @@ const Careers = () => {
       <br />
       <br />
       <br />
-      <div className="container text-white">
+      <div className="container ">
         <div className="row">
           <div className="col-5">
             <div className="row">
@@ -188,7 +193,7 @@ const Careers = () => {
         </div>
       </div>
 
-      <div className="container text-white" style={{ marginTop: 180 }}>
+      <div className="container " style={{ marginTop: 180 }}>
         <div className="row">
           <div className="col-5">
             <div className="row">
@@ -233,17 +238,12 @@ const Careers = () => {
       </div>
 
       {/* End Section */}
-
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <div className="container">
+      <div style={{ height: 200 }} />
+      <div style={{ width: 900, margin: "0 auto" }}>
         <h1
           style={{
             color: "#3a44a1",
-            fontSize: 30,
+            fontSize: 50,
             lineHeight: 1.3,
             fontWeight: "bold",
           }}
@@ -270,6 +270,8 @@ const Careers = () => {
                   <div
                     className="item"
                     style={{
+                      borderRadius: 20,
+                      overflow: "hidden",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -307,9 +309,9 @@ const Careers = () => {
  */
 function Footer() {
   return (
-    <div style={{ background: "rgba(0,0,0,.3)", marginTop: 100 }}>
+    <div style={{ background: "#F3F3F3", marginTop: 100 }}>
       <div className="container" style={{ padding: "100px 0" }}>
-        <div className="row text-white">
+        <div className="row ">
           <div className="col-8">
             <h1 style={{ fontWeight: "bold" }}>apply to be a CRED member</h1>
             <br />
@@ -325,10 +327,13 @@ function Footer() {
               download the app and apply to be a member
             </h1>
             <div style={{ marginTop: 30, cursor: "pointer" }}>
-              <img src={"/icons/play-store.png"} style={{ width: 50 }} />
               <img
-                src={"/icons/apple-store.png"}
-                style={{ marginLeft: 30, width: 50 }}
+                src={"https://careers.cred.club/Images/Play%20Store%20Icon.png"}
+                style={{ width: 45 }}
+              />
+              <img
+                src={"https://careers.cred.club/Images/App%20Store%20Icon.png"}
+                style={{ marginLeft: 30, width: 45 }}
               />
             </div>
           </div>

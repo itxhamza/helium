@@ -1,8 +1,8 @@
 {
   "careers.tsx -> react-owl-carousel": {
-    "id": 389,
+    "id": "careers.tsx -> react-owl-carousel",
     "files": [
-      "static/chunks/568.8bcecf677a91ea94.js"
+      "static/chunks/node_modules_react-owl-carousel_umd_OwlCarousel_js.js"
     ]
   }
 }
