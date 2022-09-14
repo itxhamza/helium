@@ -1,4 +1,5 @@
 import React from "react";
+import useMeta from "../HOC/useMeta";
 // import "../styles/home.module.css";
 
 const home = () => {
@@ -288,4 +289,6 @@ const home = () => {
   );
 };
 
-export default home;
+export default useMeta(home, {
+  title: "Helium – Introducing The People's Network",
+});

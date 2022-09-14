@@ -5,6 +5,8 @@ import { FaChevronRight } from "react-icons/fa";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 // const $ = dynamic(import("jquery"), { ssr: false });
+import useMeta from "../HOC/useMeta";
+
 const OwlCarousel = dynamic(import("react-owl-carousel"), { ssr: false });
 
 const Careers = () => {
@@ -343,4 +345,6 @@ function Footer() {
   );
 }
 
-export default Careers;
+export default useMeta(Careers, {
+  title: "Helium Careers",
+});

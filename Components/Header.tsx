@@ -37,7 +37,7 @@ const Header = () => {
                   style={{ cursor: "pointer" }}
                   className="jsx-1806352012 navLink"
                 >
-                  Careers
+                  Career
                 </a>
               </Link>
               <a
